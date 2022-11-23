@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>김나라's 개인포트폴리오</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/title.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <!-- .........구글폰트........ -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet"> 
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+    <script src="js/jquery-1.6.2.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(
+            function(){
+                $(".changecolor li:nth-child(1) a").click(
+                    function(){
+                        $("body").css("background-color","#fff");
+                        return false; //a클릭시 화면새로고침방지
+                    }
+                );
+                $(".changecolor li:nth-child(2) a").click(
+                    function(){
+                        $("body").css("background-color","#333");
+                        return false; //a클릭시 화면새로고침방지
+                    }
+                );
+                $(".aside a.ham").click(
+                    function(){
+                        $(".aside").toggleClass("asideShow");
+                        return false;
+                    }
+                );
+                $(".gnb li a").hover(
+                    function(){
+                        $(this).addClass("over");
+                        $(this).parent().siblings().children().removeClass("over");
+                        //parent()는 앞요소의 부모요소를 가리킴
+                        //siblings()는 앞요소의 다른형제요소를 가르킴
+                        //children()는 앞요소의 자식요소를 가르킴
+                    }
+                ) 
+            } 
+        );
+        
+    </script>
+</head>
+<body>
+    <!-- .........상단 영역........ -->
+    <header>
+        <div class="wrap">
+            <h1><a href=""><span>NR</span>Portfolio</a></h1>
+            <nav>
+                <ul class="gnb">
+                    <li>
+                        <a href="">Home</a>
+                    </li>
+                    <li>
+                        <a href="">About </a>
+                    </li>
+                    <li>
+                        <a href="">Skill </a>
+                    </li>
+                    <li>
+                        <a href="">Portfolio</a>
+                        <div class="bg">
+                            <ul class="sub">
+                                <li><a href="">Web</a></li>
+                                <li><a href="">Design</a></li>
+                                <li><a href="">Video</a></li>
+                            </ul>
+                            
+                        </div>
+                    </li>
+                    <li>
+                        <a href="">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <!-- .........타이틀 영역........ -->
+    <div id="title">
+        <div class="wrap">
+            <h2>WEB
+                DESIGNER
+                &PUBLISHER
+            </h2>
+        </div>
+    </div>
+    <!-- .........내용 영역........ -->
+    <main>
+
+    </main>
+    <!-- .........하단 영역........ -->
+    <footer>
+
+    </footer>
+</body>
+</html>

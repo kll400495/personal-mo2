@@ -1,0 +1,62 @@
+body{
+  overflow-x: hidden;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+header {
+    
+}
+header div.wrap {
+    
+  display: flex;
+  justify-content: space-between;
+  margin-top: 35px;
+  align-items: baseline;
+}
+header div.wrap h1 {
+    
+  font-size: 30px;
+}
+header div.wrap h1 a {
+    
+}
+header div.wrap h1 a span{
+    
+  font-size: 50px;
+  font-weight: 700;
+}
+header div.wrap nav {
+    
+  font-size: 23px;
+}
+header div.wrap nav ul.gnb {
+    
+  display: flex;
+  column-gap: 109px;
+}
+header div.wrap nav ul.gnb li {
+    
+}
+header div.wrap nav ul.gnb li a {
+    
+}
+header div.wrap nav ul.gnb li div.bg {
+    
+  position: absolute;
+  width: 98px;
+  height: 114px;
+  font-size: 18px;
+  line-height: 1.9;
+  padding-top: 10px;
+}
+header div.wrap nav ul.gnb li div.bg ul.sub {
+    
+  /*! list-style: disc; */
+}
+header div.wrap nav ul.gnb li div.bg ul.sub li {
+    
+  list-style: disc;
+}
+header div.wrap nav ul.gnb li div.bg ul.sub li a {
+    
+  font-size: 16px;
+}

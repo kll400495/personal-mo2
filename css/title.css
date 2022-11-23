@@ -1,0 +1,17 @@
+div#title {
+    
+}
+div#title .wrap {
+    
+  height: 100%;
+}
+div#title .wrap h2 {  
+  font-size: 123px;
+  font-weight: 700;
+  color: white;
+  margin-top: 190px;
+  color: #f8a112;
+}
+div#title .wrap h2 span{
+  color: white;
+}

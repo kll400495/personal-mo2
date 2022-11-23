@@ -1,0 +1,137 @@
+main {
+   
+}
+/* ...........about......... */
+section#about {
+   
+}
+section#about div.wrap {
+   
+  position: relative;
+  display: flex;
+  justify-content: center;
+  column-gap: 87px;
+}
+section#about div.wrap h2 {
+   
+  /*! font-size: 221px; */
+  /*! font-weight: 700; */
+  /*! position: absolute; */
+  /*! left: -126px; */
+  /*! top: 0px; */
+  
+  /*! padding-top: 56px; */
+}
+section#about div.wrap h2 span.h2-1 {
+   
+  /*! font-size: 89px; */
+  /*! position: absolute; */
+  /*! bottom: 11px; */
+  /*! width: 481px; */
+  /*! left: 147px; */
+  /*! font-weight: 400; */
+  /*! color: #f8a112; */
+}
+section#about div.wrap img {
+   
+  width: 400px;
+  height: 400px;
+  margin-top: 203px;
+  background-image: url(../img/poto.png);
+  background-size: 75%;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+  border: 1px solid white;
+  background-position-x: 57px;
+  background-color: #d9d9d9;
+  margin-bottom: 70px;
+}
+section#about div.wrap ul {
+   
+  margin-top: 200px;
+  line-height: 1.5;
+}
+section#about div.wrap ul li {
+   
+}
+section#about div.wrap ul li:nth-child(1){
+  
+  margin-bottom: 41px;
+}
+section#about div.wrap ul li h3 {
+   
+  font-size: 40px;
+  font-weight: 500;
+  color: #6A7A8D;
+}
+section#about div.wrap ul li p {
+   
+  font-size: 20px;
+  color: white;
+}
+section#about div.wrap ul li p span{
+  
+  color: #f8a112;
+}
+/* ...........skil......... */
+section#skill {
+    
+}
+section#skill div.wrap {
+    
+  position: relative;
+}
+section#skill div.wrap h2.h2 {
+    
+}
+section#skill div.wrap h2.h2 span.h2-1{
+    
+}
+section#skill div.wrap ul {
+    
+  padding-top: 86px;
+}
+section#skill div.wrap ul li {
+    
+  display: flex;
+  column-gap: 25px;
+  margin-bottom: 25px;
+  justify-content: center;
+  align-items: center;
+}
+section#skill div.wrap ul li img {
+    
+  width: 70px;
+}
+section#skill div.wrap ul li span {
+    
+  border: 1px solid white;
+  width: 694px;
+  height: 20px;
+  border-radius: 17px;
+}
+/* ...........portfolio......... */
+section#portfolio {
+    
+}
+section#portfolio div.wrap {
+    
+}
+section#portfolio div.wrap h2 {
+    
+}
+section#portfolio div.wrap h2 span {
+    
+}
+section#portfolio div.wrap ul {
+    
+}
+section#portfolio div.wrap ul li {
+    
+}
+section#portfolio div.wrap ul li h3 {
+    
+}
+section#portfolio div.wrap ul li p {
+    
+}

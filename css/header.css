@@ -1,62 +1,81 @@
 body{
   overflow-x: hidden;
   font-family: 'Noto Sans KR', sans-serif;
+  background-color: #1A2B49;
 }
 header {
     
 }
 header div.wrap {
-    
   display: flex;
   justify-content: space-between;
   margin-top: 35px;
   align-items: baseline;
+  border-bottom: 1px solid white;
+  padding: 0;
 }
 header div.wrap h1 {
-    
   font-size: 30px;
 }
 header div.wrap h1 a {
-    
+  color: white;
 }
 header div.wrap h1 a span{
-    
   font-size: 50px;
   font-weight: 700;
+  color: #F8A112;
 }
 header div.wrap nav {
-    
   font-size: 23px;
 }
 header div.wrap nav ul.gnb {
-    
   display: flex;
-  column-gap: 109px;
 }
 header div.wrap nav ul.gnb li {
-    
+
+}
+header div.wrap nav ul.gnb li:nth-child(4){
+  position: relative;
 }
 header div.wrap nav ul.gnb li a {
-    
+  display: block;
+  padding: 0px 39px;
+  color: white;
+  padding-bottom: 14px;
+}
+header div.wrap nav ul.gnb li a:hover{
+  color:#F8A112;
+}
+header div.wrap nav ul.gnb li:nth-child(4):hover > .bg{
+  display: block;
 }
 header div.wrap nav ul.gnb li div.bg {
-    
   position: absolute;
-  width: 98px;
+  width: 108px;
   height: 114px;
   font-size: 18px;
   line-height: 1.9;
-  padding-top: 10px;
+  background-color: rgba(234, 234, 234, 0.5);
+  left: 17%;
+  padding-left: 12px;
+  display: none;
 }
 header div.wrap nav ul.gnb li div.bg ul.sub {
-    
-  /*! list-style: disc; */
+  list-style: inside;
+  color: white;
 }
 header div.wrap nav ul.gnb li div.bg ul.sub li {
     
-  list-style: disc;
 }
-header div.wrap nav ul.gnb li div.bg ul.sub li a {
-    
+header div.wrap nav ul.gnb li div.bg ul.sub li::marker{
+  color: #1a2b49;
+}
+header div.wrap nav ul.gnb li div.bg ul.sub li a { 
   font-size: 16px;
+  color: #1a2b49;
+  padding: 4px 8px;
+  display: inline;
+}
+header div.wrap nav ul.gnb li div.bg ul.sub li a:hover{
+  border-bottom: 2px solid white;
 }

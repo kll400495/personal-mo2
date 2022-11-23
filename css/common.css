@@ -1,4 +1,26 @@
 .wrap{
   width: 1500px;
   margin: 0 auto;
+  padding: 100px 0;
+}
+.block{
+  display: block
+}
+.h2{
+  font-size: 221px;
+  font-weight: 700;
+  position: absolute;
+  left: -126px;
+  top: 0px;
+  color: #606060;
+  padding-top: 56px;
+}
+.h2-1{
+  font-size: 89px;
+  position: absolute;
+  bottom: 11px;
+  width: 481px;
+  left: 147px;
+  font-weight: 400;
+  color: #f8a112;
 }

@@ -103,35 +103,211 @@ section#skill div.wrap ul li img {
     
   width: 70px;
 }
-section#skill div.wrap ul li span {
-    
-  border: 1px solid white;
-  width: 694px;
-  height: 20px;
+section#skill div.wrap ul li span.gauge {
+  border: 1px solid #fb9d0f;
+  width: 692px;
+  height: 30px;
   border-radius: 17px;
 }
+section#skill div.wrap ul li span.gauge::before{
+  content: "";
+  width: 90%;
+  height: 30px;
+  border-radius: 17px;
+  display: block;
+  background-color: #fb9d0f;
+  animation: gauge 5s;
+}
+section#skill div.wrap ul li:nth-child(2) span.gauge {
+  border: 1px solid #82bcf8;
+  width: 692px;
+  height: 30px;
+  border-radius: 17px;
+}
+section#skill div.wrap ul li:nth-child(2) span.gauge::before{
+  content: "";
+  width: 70%;
+  height: 30px;
+  border-radius: 17px;
+  display: block;
+  background-color: #82bcf8;
+  animation: gauge2 5s;
+}
+section#skill div.wrap ul li:nth-child(3) span.gauge {
+  border: 1px solid #d750fd;
+  width: 692px;
+  height: 30px;
+  border-radius: 17px;
+}
+section#skill div.wrap ul li:nth-child(3) span.gauge::before{
+  content: "";
+  width: 70%;
+  height: 30px;
+  border-radius: 17px;
+  display: block;
+  background-color: #d750fd;
+  animation: gauge3 5s;
+}
+section#skill div.wrap ul li:nth-child(4) span.gauge {
+  border: 1px solid #fb4a1e;
+  width: 692px;
+  height: 30px;
+  border-radius: 17px;
+}
+section#skill div.wrap ul li:nth-child(4) span.gauge::before{
+  content: "";
+  width: 50%;
+  height: 30px;
+  border-radius: 17px;
+  display: block;
+  background-color: #fb4a1e;
+  animation: gauge4 5s;
+}
+section#skill div.wrap ul li:nth-child(5) span.gauge {
+  border: 1px solid #004be6;
+  width: 692px;
+  height: 30px;
+  border-radius: 17px;
+}
+section#skill div.wrap ul li:nth-child(5) span.gauge::before{
+  content: "";
+  width: 50%;
+  height: 30px;
+  border-radius: 17px;
+  display: block;
+  background-color: #004be6;
+  animation: gauge5 5s;
+}
+section#skill div.wrap ul li:nth-child(6) span.gauge {
+  border: 1px solid #f0aa2c;
+  width: 692px;
+  height: 30px;
+  border-radius: 17px;
+}
+section#skill div.wrap ul li:nth-child(6) span.gauge::before{
+  content: "";
+  width: 30%;
+  height: 30px;
+  border-radius: 17px;
+  display: block;
+  background-color: #f0aa2c;
+  animation: gauge6 5s;
+}
+@keyframes gauge{
+  0%{
+    width: 0;  
+  }
+  100%{ 
+    width: 90%;
+  }
+}
+@keyframes gauge2{
+  0%{
+    width: 0;  
+  }
+  100%{
+    width: 70%;
+  }
+}
+@keyframes gauge3{
+  0%{
+    width: 0;  
+  }
+  100%{
+    width: 70%;
+  }
+}
+@keyframes gauge4{
+  0%{
+    width: 0;  
+  }
+  100%{
+    width: 50%;
+  }
+}
+@keyframes gauge5{
+  0%{
+    width: 0;  
+  }
+  100%{
+    width: 50%;
+  }
+}
+@keyframes gauge6{
+  0%{
+    width: 0;  
+  }
+  100%{
+    width: 30%;
+  }
+}
 /* ...........portfolio......... */
-section#portfolio {
+section#portfolioweb {
     
 }
-section#portfolio div.wrap {
+section#portfolioweb div.wrap {
+    
+  position: relative;
+}
+section#portfolioweb div.wrap h2 {
     
 }
-section#portfolio div.wrap h2 {
+section#portfolioweb div.wrap h2 span {
     
 }
-section#portfolio div.wrap h2 span {
+section#portfolioweb div.wrap ul {
     
 }
-section#portfolio div.wrap ul {
+section#portfolioweb div.wrap ul li {
     
 }
-section#portfolio div.wrap ul li {
+section#portfolioweb div.wrap ul li h3 {
     
 }
-section#portfolio div.wrap ul li h3 {
+section#portfolioweb div.wrap ul li p {
     
 }
-section#portfolio div.wrap ul li p {
+/* ...........portfoliodesign......... */
+/* ...........portfoliovideo......... */
+/* ...........contact......... */
+section#contact {
     
+}
+section#contact div.wrap {
+    
+  position: relative;
+}
+section#contact div.wrap h2 {
+    
+}
+section#contact div.wrap div.contents{
+    
+  margin-top: 208px;
+  padding-left: 30px;
+}
+section#contact div.wrap div.contents p {
+    
+  font-size: 44px;
+  color: white;
+  line-height: 1.5;
+}
+section#contact div.wrap div.contents p span{
+
+  color: #f8a112;
+  font-size: 54px;
+  font-weight: 500;
+}
+section#contact div.wrap div.contents h3 {
+    
+  font-size: 40px;
+  margin-top: 45px;
+  color: #6a7a8d;
+  font-weight: 500;
+}
+section#contact div.wrap div.contents p.email {
+    
+  border: 2px solid #6a7a8d;
+  padding: 38px;
+  text-align: center;
+  margin-top: 10px;
 }

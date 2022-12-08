@@ -24,3 +24,22 @@
   font-weight: 400;
   color: #f8a112;
 }
+.hide{
+  display: none;
+}
+.graphic{
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.center{
+  
+  position: absolute;
+  bottom: 182px;
+}

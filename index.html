@@ -6,51 +6,227 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>김나라's 개인포트폴리오</title>
     <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/common.css">
-    <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/title.css">
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/footer.css">
     <!-- .........구글폰트........ -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet"> 
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
-    <script src="js/jquery-1.6.2.min.js"></script>
+    <link rel="stylesheet" href="css/footer.css">
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/title.css">
+   
+    <link rel="stylesheet" href="css/footer.css">
+    <!-- <script src="js/jquery-1.6.2.min.js"></script> -->
     <script type="text/javascript">
         $(document).ready(
             function(){
-                $(".changecolor li:nth-child(1) a").click(
+                //상단바 클릭시 해당컨텐츠로 페이지 스크롤
+                var c1p;
+                var c2p;
+                var c3p;
+                var c4p;
+                var c5p;
+                var c6p;
+                var c7p;
+                var c8p;
+                c1p=$("#title").offset().top;
+                c2p=$("#about").offset().top;
+                c3p=$("#skill").offset().top;
+                c4p=$("#portfolioweb").offset().top;
+                c5p=$("#portfolioweb").offset().top;
+                c6p=$("#portfoliodesign").offset().top;
+                c7p=$("#portfoliovideo").offset().top;
+                c8p=$("#contact").offset().top;
+                $(".c1").click(function(){
+                    $("html,body").animate({scrollTop:c1p},500);
+                    return false;
+                });
+                $(".c2").click(function(){
+                    $("html,body").animate({scrollTop:c2p},500);
+                    return false;
+                });
+                $(".c3").click(function(){
+                    $("html,body").animate({scrollTop:c3p},500);
+                    return false;
+                });
+                $(".c4").click(function(){
+                    $("html,body").animate({scrollTop:c4p},500);
+                    return false;
+                });
+                $(".c5").click(function(){
+                    $("html,body").animate({scrollTop:c5p},500);
+                    return false;
+                });
+                $(".c6").click(function(){
+                    $("html,body").animate({scrollTop:c6p},500);
+                    return false;
+                });
+                $(".c7").click(function(){
+                    $("html,body").animate({scrollTop:c7p},500);
+                    return false;
+                });
+                $(".c8").click(function(){
+                    $("html,body").animate({scrollTop:c8p},500);
+                    return false;      
+                }); 
+                            
+                // 포폴 웹부분 넘기기
+                var n=0;
+                $("section#portfolioweb div.wrap span a").eq(0).hide();
+                $("section#portfolioweb div.wrap span a").eq(1).click(
                     function(){
-                        $("body").css("background-color","#fff");
-                        return false; //a클릭시 화면새로고침방지
-                    }
-                );
-                $(".changecolor li:nth-child(2) a").click(
-                    function(){
-                        $("body").css("background-color","#333");
-                        return false; //a클릭시 화면새로고침방지
-                    }
-                );
-                $(".aside a.ham").click(
-                    function(){
-                        $(".aside").toggleClass("asideShow");
+                        if(n<2){
+                            n+=1;
+                            $("section#portfolioweb div.wrap div.list div.listcontents > div").css("transform","translateX("+(-100)*n+"%)");
+                            $("section#portfolioweb div.wrap div.list div.listcontents > div").animate({"opacity":1},1500,function(){
+                                if(n==2){
+                                     $("section#portfolioweb div.wrap span a").eq(1).hide(100);
+                                }
+                            $("section#portfolioweb div.wrap span a").eq(0).show(100);
+					});
+                        }else{
+
+                        }
                         return false;
                     }
                 );
-                $(".gnb li a").hover(
+                $("section#portfolioweb div.wrap span a").eq(0).click(
                     function(){
-                        $(this).addClass("over");
-                        $(this).parent().siblings().children().removeClass("over");
-                        //parent()는 앞요소의 부모요소를 가리킴
-                        //siblings()는 앞요소의 다른형제요소를 가르킴
-                        //children()는 앞요소의 자식요소를 가르킴
+                        if(n>0){
+                            n-=1;
+                            $("section#portfolioweb div.wrap div.list div.listcontents > div").css("transform","translateX("+(-100)*n+"%)");
+                            $("section#portfolioweb div.wrap span a").eq(1).show(1000);
+                            $("section#portfolioweb div.wrap div.list div.listcontents > div").animate({"opacity":1},1500,function(){
+                                if(n==0){
+                                $("section#portfolioweb div.wrap span a").eq(0).hide(100)
+                                } 
+                            });
+                            // if(n==0){
+                            //     $("section#portfolioweb div.wrap span a").eq(0).hide(300)
+                            // }
+                        }else{
+
+                        }
+                        return false;
                     }
-                ) 
+                );    
+                //포폴 디자인 부분 메뉴바 
+                $(".detailcontents, .card").hide();
+                $(".lis").click(
+                    function(){
+                        $(".somcontents").show();
+                        $(".detailcontents, .card").hide();
+                        return false; // a태그를 클릭시 새로고침되지 않게 처리
+                    }
+                );
+                $(".lid").click(
+                    function(){
+                        $(".detailcontents").show();
+                        $(".somcontents, .card").hide();
+                        return false; // a태그를 클릭시 새로고침되지 않게 처리
+                    }
+                );
+                $(".lic").click(
+                    function(){
+                        $(".card").show();
+                        $(".detailcontents, .somcontents").hide();
+                        return false; // a태그를 클릭시 새로고침되지 않게 처리
+                    }
+                );
+                
+                // 포폴 디자인 썸네일 부분 넘기기
+                
+                // 포폴 디자인 상세페이지 부분 넘기기
+                $("section#portfoliodesign div.wrap div.detail span a").eq(1).click(
+                    function(){
+                        if(n<5){
+                            n+=1;
+                            $("section#portfoliodesign div.wrap div.detail div.detailcontents div").css("transform","translateX("+(-100)*n+"%)");
+                            
+                        }else{
+
+                        }
+                        return false;
+                    }
+                );
+                $("section#portfoliodesign div.wrap div.detail span a").eq(0).click(
+                    function(){
+                        if(n>0){
+                            n-=1;
+                            $("section#portfoliodesign div.wrap div.detail div.detailcontents div").css("transform","translateX("+(-100)*n+"%)");
+                        }else{
+
+                        }
+                        return false;
+                    }
+                ); 
+                // 포폴 디자인 카드뉴스부분
+                $("section#portfoliodesign div.wrap div.card img").click(
+                    function(){
+                        $(".graphic").remove();
+                        $("section#portfoliodesign").append("<div class='graphic'><div class='center'></div></div>");
+                        $(".graphic").hide().fadeIn();
+                        $(this).clone().appendTo(".center");
+                        $(".center").append("<a class='close'>✖</a>");
+                        $(".center .close").click(
+                            function(){
+                            $(".graphic").fadeOut(500,function(){
+                                $(this).remove();
+                            });
+                            }
+                        );
+                        $(".graphic").click(
+                            function(){
+                            $(".graphic").fadeOut(500,function(){
+                                $(this).remove();
+                            });
+                            }
+                        );
+                        $(".center").click(function(e){
+                            e. stopPropagation();
+                        });
+                    }
+                ); 
+                   
             } 
         );
         
     </script>
+    <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
+    <script type="text/javascript" src="slick/slick.min.js"></script>
+    <script>
+    $(document).ready(
+        function(){
+            $('.videocontents').slick({
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                arrows: false,
+                fade: true,
+                asNavFor: '.videocontents1'
+            });
+            $('.videocontents1').slick({
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                asNavFor: '.videocontents',
+                dots: true,
+                centerMode: true,
+                focusOnSelect: true
+            });
+            $('.somcontents').slick({
+                dots: true,
+                infinite: true,
+                speed: 300,
+                slidesToShow: 1,
+                adaptiveHeight: true
+            });
+        }
+        
+    );
+    </script>
+     <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
     <!-- .........상단 영역........ -->
@@ -59,27 +235,27 @@
             <h1><a href=""><span>NR</span>Portfolio</a></h1>
             <nav>
                 <ul class="gnb">
-                    <li>
+                    <li class="c1">
                         <a href="">Home</a>
                     </li>
-                    <li>
+                    <li class="c2">
                         <a href="">About </a>
                     </li>
-                    <li>
+                    <li class="c3">
                         <a href="">Skill </a>
                     </li>
-                    <li>
+                    <li class="c4">
                         <a href="">Portfolio</a>
                         <div class="bg">
                             <ul class="sub">
-                                <li><a href="">Web</a></li>
-                                <li><a href="">Design</a></li>
-                                <li><a href="">Video</a></li>
+                                <li class="c5"><a href="">Web</a></li>
+                                <li class="c6"><a href="">Design</a></li>
+                                <li class="c7"><a href="">Video</a></li>
                             </ul>
                             
                         </div>
                     </li>
-                    <li>
+                    <li class="c8">
                         <a href="">Contact</a>
                     </li>
                 </ul>
@@ -91,7 +267,7 @@
         <div class="wrap">
             <h2>WEB<span class="block"></span>
                 <span>DESIGNER</span><span class="block"></span>
-                &PUBLISHER
+                <span>&PUBLISHER</span>
             </h2>
         </div>
     </div>
@@ -133,12 +309,12 @@
             <div class="wrap">
                 <h2 class="h2">02<span class="h2-1">SKILL</span></h2>
                 <ul>
-                    <li><img src="img/skill (1).png" alt=""><span class="gauge"></span></li>
-                    <li><img src="img/skill (2).png" alt=""><span class="gauge"></span></li>
-                    <li><img src="img/skill (3).png" alt=""><span class="gauge"></span></li>
-                    <li><img src="img/skill (4).png" alt=""><span class="gauge"></span></li>
-                    <li><img src="img/skill (5).png" alt=""><span class="gauge"></span></li>
-                    <li><img src="img/skill (6).png" alt=""><span class="gauge"></span></li>
+                    <li><img src="img/skill(1).png" alt=""><span class="gauge"></span></li>
+                    <li><img src="img/skill(2).png" alt=""><span class="gauge"></span></li>
+                    <li><img src="img/skill(3).png" alt=""><span class="gauge"></span></li>
+                    <li><img src="img/skill(4).png" alt=""><span class="gauge"></span></li>
+                    <li><img src="img/skill(5).png" alt=""><span class="gauge"></span></li>
+                    <li><img src="img/skill(6).png" alt=""><span class="gauge"></span></li>
                 </ul>
             </div>
         </section>
@@ -149,45 +325,224 @@
                     <span class="block"></span>Web</span>
                 </h2>
                 <div class="list">
-                    <div>
-                        <img src="" alt="">
-                        <h3>LUNA BREW</h3>
-                        <ul>
-                            <li>컨셉 : 심플</li>
-                            <li>응용프로그램 : Ai, Ps, html, css</li>
-                            <li>제작기간 : 0일</li>
-                        </ul>
-                        <a href="" class="page">VIEW</a>
-                    </div>
-                    <div>
-                        <img src="" alt="">
-                        <h3>현대건설</h3>
-                        <ul>
-                            <li>컨셉 : 심플</li>
-                            <li>응용프로그램 : Ai, Ps, html, css</li>
-                            <li>제작기간 : 0일</li>
-                        </ul>
-                        <a href="" class="page">VIEW</a>
-                    </div>
-                    <div>
-                        <img src="" alt="">
-                        <h3>PORTFOLIO</h3>
-                        <ul>
-                            <li>컨셉 : 심플</li>
-                            <li>응용프로그램 : Ai, Ps, html, css, js</li>
-                            <li>제작기간 : 0일</li>
-                        </ul>
-                        <a href="" class="page">VIEW</a>
+                    <div class="listcontents">
+                        <div>
+                            <img src="img/renewal(1).png" alt="">
+                            <div class="contents">
+                                <h3>LUNA BREW</h3>
+                                <ul>
+                                    <li>컨셉 : 심플</li>
+                                    <li>응용프로그램 : Ai, Ps, html, css</li>
+                                    <li>제작기간 : 0일</li>
+                                </ul>
+                                <a href="https://kll400495.github.io/pf3-mo/" class="page">VIEW</a>
+                            </div>
+                        </div>
+                        <div>
+                            <img src="img/renewal(2).png" alt="">
+                            <div class="contents">
+                                <h3>현대건설</h3>
+                                <ul>
+                                    <li>컨셉 : 심플</li>
+                                    <li>응용프로그램 : Ai, Ps, html, css</li>
+                                    <li>제작기간 : 0일</li>
+                                </ul>
+                                <a href="https://kll400495.github.io/Hyundai/" class="page">VIEW</a>
+                            </div>
+                        </div>
+                        <div>
+                            <img src="img/renewal(3).png" alt="">
+                            <div class="contents">
+                                <h3>PORTFOLIO</h3>
+                                <ul>
+                                    <li>컨셉 : 심플</li>
+                                    <li>응용프로그램 : Ai, Ps, html, css, js</li>
+                                    <li>제작기간 : 0일</li>
+                                </ul>
+                                <a href="https://kll400495.github.io/personal-js/" class="page">VIEW</a>
+                            </div>    
+                        </div>
                     </div>
                 </div>
                 <span class="button">
                     <a href="">이전</a>
                     <a href="">다음</a>
                 </span>
+                <p>hover</p>
             </div>
         </section>
         <!-- portfoliodesign -->
+        <section id="portfoliodesign">
+            <div class="wrap">
+                <h2 class="h2">03<span class="h2-1">PORTFOLIO
+                    <span class="block"></span>Design</span>
+                </h2>
+                <nav>
+                    <ul class="nav1">
+                        <li class="lis"><a href="">썸네일 </a></li>
+                        <li class="lid"><a href="">상세페이지 </a></li>
+                        <li class="lic"><a href="">카드뉴스</a></li>
+                    </ul>
+                </nav>
+                <div class="som">
+                    <div class="somcontents">
+                        <div>
+                            <img src="img/som(1).png" alt="">
+                            <h3>썸네일<span class="block"></span><span>01</span></h3>
+                        </div>
+                        <div>
+                            <img src="img/som(2).png" alt="">
+                            <h3>썸네일<span class="block"></span><span>02</span></h3>
+                        </div>
+                        <div>
+                            <img src="img/som(3).png" alt="">
+                            <h3>썸네일<span class="block"></span><span>03</span></h3>
+                        </div>
+                        <div>
+                            <img src="img/som(4).png" alt="">
+                            <h3>썸네일<span class="block"></span><span>04</span></h3>
+                        </div>
+                        <div>
+                            <img src="img/som(5).png" alt="">
+                            <h3>썸네일<span class="block"></span><span>05</span></h3>
+                        </div>
+                        <div>
+                            <img src="img/som(6).png" alt="">
+                            <h3>썸네일<span class="block"></span><span>06</span></h3>
+                        </div>
+                        <div>
+                            <img src="img/som(7).png" alt="">
+                            <h3>썸네일<span class="block"></span><span>07</span></h3>
+                        </div>
+                        <div>
+                            <img src="img/som(8).png" alt="">
+                            <h3>썸네일<span class="block"></span><span>08</span></h3>
+                        </div>
+                    </div>
+                    <!-- <span class="button">
+                        <a href="">이전</a>
+                        <a href="">다음</a>
+                    </span>     -->
+                </div>
+                <div class="detail">
+                    <div class="detailcontents">
+                        <div>
+                            <img src="img/datail(1).png" alt="">
+                            <h3>상세페이지<span class="block"></span><span>01</span></h3>
+                        </div>
+                        <div>
+                            <img src="img/datail(2).png" alt="">
+                            <h3>상세페이지<span class="block"></span><span>02</span></h3>
+                        </div>
+                        <div>
+                            <img src="img/datail(3).png" alt="">
+                            <h3>상세페이지<span class="block"></span><span>03</span></h3>
+                        </div>
+                        <div>
+                            <img src="img/datail(4).png" alt="">
+                            <h3>상세페이지<span class="block"></span><span>04</span></h3>
+                        </div>
+                        <div>
+                            <img src="img/datail(5).png" alt="">
+                            <h3>상세페이지<span class="block"></span><span>05</span></h3>
+                        </div>
+                        <div>
+                            <img src="img/datail(6).png" alt="">
+                            <h3>상세페이지<span class="block"></span><span>06</span></h3>
+                        </div>
+                    </div>
+                    <span class="button">
+                        <a href="">이전</a>
+                        <a href="">다음</a>
+                    </span>
+                </div>
+                <div class="card">
+                    <img src="img/card(1).jpg" alt="">
+                    <img src="img/card(2).jpg" alt="">
+                    <img src="img/card(3).jpg" alt="">
+                    <img src="img/card(4).jpg" alt="">
+                    <img src="img/card(5).jpg" alt="">
+                    <img src="img/card(6).jpg" alt="">
+                    <img src="img/card(7).jpg" alt="">
+                    <img src="img/card(8).jpg" alt="">
+                    <img src="img/card(9).jpg" alt="">
+                </div>
+            </div>
+        </section>
         <!-- portfoliovideo -->
+        <section id="portfoliovideo">
+            <div class="wrap">
+                <h2 class="h2">03<span class="h2-1">PORTFOLIO
+                    <span class="block"></span>Video</span>
+                </h2>
+                <div class="video">
+                    <div class="videocontents">
+                        <div>
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/pbWIp9M236I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <p>기획 - <span>100%</span>
+                                <span class="block"></span>
+                                유튜브 조회수 : <span>8.6천회</span>
+                            </p>
+                        </div>
+                        <div>
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/jgeh3_ca8Ac" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <p>기획 - <span>100%</span>   촬영 - <span>100%</span>   편집 - <span>100%</span>
+                                <span class="block"></span>
+                                유튜브 조회수 : <span>630회</span>
+                            </p>
+                        </div>
+                        <div>
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/fqkZZc2nCL8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <p>기획 - <span>100%</span>   촬영 - <span>100%</span>   편집 - <span>100%</span>
+                                <span class="block"></span>
+                                유튜브 조회수 : <span>2.1천회</span>
+                            </p>
+                        </div>
+                        <div>
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/-9VuxM3HdbU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <p>기획 - <span>100%</span>   촬영 - <span>100%</span>   편집 - <span>100%</span>
+                                <span class="block"></span>
+                                유튜브 조회수 : <span>407회</span>
+                            </p>
+                        </div>
+                        <div>
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/w6ONvFpYwjg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <p>기획 - <span>100%</span>
+                                <span class="block"></span>
+                                유튜브 조회수 : <span>7.7천회</span>
+                            </p>
+                        </div>
+                        <div>
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/i4Rg9UJTm6o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <p>기획 - <span>100%</span>   촬영 - <span>100%</span>   편집 - <span>100%</span>
+                                <span class="block"></span>
+                                유튜브 조회수 : <span>38만회</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="videocontents1">
+                        <div>
+                            <img src="img/video.png" alt="">
+                        </div>
+                        <div>
+                            <img src="img/video1.png" alt="">
+                        </div>
+                        <div>
+                            <img src="img/video2.png" alt="">
+                        </div>
+                        <div>
+                            <img src="img/video3.png" alt="">
+                        </div>
+                        <div>
+                            <img src="img/video4.png" alt="">
+                        </div>
+                        <div>
+                            <img src="img/video5.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
         <!-- contact -->
         <section id="contact">
             <div class="wrap">
@@ -201,6 +556,7 @@
                         <span class="block"></span>
                         바쁜시간 내주셔서 <span>감사합니다</span>
                     </p>
+                    <div class="padlet-embed" style="border:1px solid rgba(0,0,0,0.1);border-radius:2px;box-sizing:border-box;overflow:hidden;position:relative;width:100%;background:#F4F4F4"><p style="padding:0;margin:0"><iframe src="https://padlet.com/embed/s8ckg8a6qe36u7nd" frameborder="0" allow="camera;microphone;geolocation" style="width:100%;height:608px;display:block;padding:0;margin:0"></iframe></p><div style="display:flex;align-items:center;justify-content:end;margin:0;height:28px"><a href="https://padlet.com?ref=embed" style="display:block;flex-grow:0;margin:0;border:none;padding:0;text-decoration:none" target="_blank"><div style="display:flex;align-items:center;"><img src="https://padlet.net/embeds/made_with_padlet_2022.png" width="114" height="28" style="padding:0;margin:0;background:0 0;border:none;box-shadow:none" alt="Padlet으로 만듦"></div></a></div></div>
                     <h3>EMAIL</h3>
                     <p class="email">kll400495@gmail.com</p>
                 </div>
@@ -209,7 +565,13 @@
     </main>
     <!-- .........하단 영역........ -->
     <footer>
-
+        <div class="wrap">
+            <h1>nara</h1>
+            <div>
+                <p>Copyright©2022 웹디자이너 김나라 All right reserved</p>
+                <p>본 사이트는 개인 포트폴리오 사이트로 제작되어 상업적 목적이 아닙니다.</p>
+            </div>
+        </div> 
     </footer>
 </body>
 </html>

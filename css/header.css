@@ -1,10 +1,10 @@
 body{
-  overflow-x: hidden;
+  /*! overflow-x: hidden; */
   font-family: 'Noto Sans KR', sans-serif;
   background-color: #1A2B49;
 }
 header {
-    
+   
 }
 header div.wrap {
   display: flex;
@@ -15,13 +15,13 @@ header div.wrap {
   padding: 0;
 }
 header div.wrap h1 {
-  font-size: 30px;
+  font-size: 38px;
 }
 header div.wrap h1 a {
   color: white;
 }
 header div.wrap h1 a span{
-  font-size: 50px;
+  font-size: 73px;
   font-weight: 700;
   color: #F8A112;
 }

@@ -200,6 +200,13 @@
     <script>
     $(document).ready(
         function(){
+            $('.somcontents').slick({
+                dots: true,
+                infinite: true,
+                speed: 300,
+                slidesToShow: 1,
+                adaptiveHeight: true
+            });
             $('.videocontents').slick({
                 slidesToShow: 1,
                 slidesToScroll: 1,
@@ -215,22 +222,60 @@
                 centerMode: true,
                 focusOnSelect: true
             });
-            $('.somcontents').slick({
-                dots: true,
-                infinite: true,
-                speed: 300,
-                slidesToShow: 1,
-                adaptiveHeight: true
-            });
         }
         
     );
     </script>
-     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/main.css">
+    <!-- 마우스 휠 -->
+    <script type="text/javascript">
+        window.onload = function () {
+            var elm = ".wheel";
+            $(elm).each(function (index) {
+                // 개별적으로 Wheel 이벤트 적용
+                $(this).on("mousewheel DOMMouseScroll", function (e) {
+                    e.preventDefault();
+                    var delta = 0;
+                    if (!event) event = window.event;
+                    if (event.wheelDelta) {
+                        delta = event.wheelDelta / 120;
+                        if (window.opera) delta = -delta;
+                    } 
+                    else if (event.detail)
+                        delta = -event.detail / 3;
+                    var moveTop = $(window).scrollTop();
+                    var elmSelecter = $(elm).eq(index);
+                    // 마우스휠을 위에서 아래로
+                    if (delta < 0) {
+                        if ($(elmSelecter).next() != undefined) {
+                            try{
+                                moveTop = $(elmSelecter).next().offset().top;
+                            }catch(e){}
+                        }
+                    // 마우스휠을 아래에서 위로
+                    } else {
+                        if ($(elmSelecter).prev() != undefined) {
+                            try{
+                                moveTop = $(elmSelecter).prev().offset().top;
+                            }catch(e){}
+                        }
+                    }
+                     
+                    // 화면 이동 0.8초(800)
+                    $("html,body").stop().animate({
+                        scrollTop: moveTop + 'px'
+                    }, {
+                        duration: 800, complete: function () {
+                        }
+                    });
+                });
+            });
+        }
+    </script>
 </head>
 <body>
     <!-- .........상단 영역........ -->
-    <header>
+    <header class="wheel">
         <div class="wrap">
             <h1><a href=""><span>NR</span>Portfolio</a></h1>
             <nav>
@@ -263,7 +308,7 @@
         </div>
     </header>
     <!-- .........타이틀 영역........ -->
-    <div id="title">
+    <div id="title" class="wheel">
         <div class="wrap">
             <h2>WEB<span class="block"></span>
                 <span>DESIGNER</span><span class="block"></span>
@@ -272,12 +317,11 @@
         </div>
     </div>
     <!-- .........메인 영역........ -->
-    <main>
         <!-- about -->
-        <section id="about">
+        <section id="about" class="wheel">
             <div class="wrap">
                 <h2 class="h2">01<span class="h2-1">ABOUT ME</span></h2>
-                <img src="" alt="">
+                <img src="poto.png" alt="">
                 <ul>
                     <li>
                         <h3>Profile</h3>
@@ -305,7 +349,7 @@
             </div>
         </section>
         <!-- skil -->
-        <section id="skill">
+        <section id="skill" class="wheel">
             <div class="wrap">
                 <h2 class="h2">02<span class="h2-1">SKILL</span></h2>
                 <ul>
@@ -319,7 +363,7 @@
             </div>
         </section>
         <!-- portfolioweb -->
-        <section id="portfolioweb">
+        <section id="portfolioweb" class="wheel">
             <div class="wrap">
                 <h2 class="h2">03<span class="h2-1">PORTFOLIO
                     <span class="block"></span>Web</span>
@@ -327,7 +371,7 @@
                 <div class="list">
                     <div class="listcontents">
                         <div>
-                            <img src="img/renewal(1).png" alt="">
+                            <img src="img/renewal(1).jpg" alt="">
                             <div class="contents">
                                 <h3>LUNA BREW</h3>
                                 <ul>
@@ -339,7 +383,7 @@
                             </div>
                         </div>
                         <div>
-                            <img src="img/renewal(2).png" alt="">
+                            <img src="img/renewal(2).jpg" alt="">
                             <div class="contents">
                                 <h3>현대건설</h3>
                                 <ul>
@@ -351,7 +395,7 @@
                             </div>
                         </div>
                         <div>
-                            <img src="img/renewal(3).png" alt="">
+                            <img src="img/renewal(3).jpg" alt="">
                             <div class="contents">
                                 <h3>PORTFOLIO</h3>
                                 <ul>
@@ -372,7 +416,7 @@
             </div>
         </section>
         <!-- portfoliodesign -->
-        <section id="portfoliodesign">
+        <section id="portfoliodesign" class="wheel">
             <div class="wrap">
                 <h2 class="h2">03<span class="h2-1">PORTFOLIO
                     <span class="block"></span>Design</span>
@@ -387,35 +431,35 @@
                 <div class="som">
                     <div class="somcontents">
                         <div>
-                            <img src="img/som(1).png" alt="">
+                            <img src="img/som(1).jpg" alt="">
                             <h3>썸네일<span class="block"></span><span>01</span></h3>
                         </div>
                         <div>
-                            <img src="img/som(2).png" alt="">
+                            <img src="img/som(2).jpg" alt="">
                             <h3>썸네일<span class="block"></span><span>02</span></h3>
                         </div>
                         <div>
-                            <img src="img/som(3).png" alt="">
+                            <img src="img/som(3).jpg" alt="">
                             <h3>썸네일<span class="block"></span><span>03</span></h3>
                         </div>
                         <div>
-                            <img src="img/som(4).png" alt="">
+                            <img src="img/som(4).jpg" alt="">
                             <h3>썸네일<span class="block"></span><span>04</span></h3>
                         </div>
                         <div>
-                            <img src="img/som(5).png" alt="">
+                            <img src="img/som(5).jpg" alt="">
                             <h3>썸네일<span class="block"></span><span>05</span></h3>
                         </div>
                         <div>
-                            <img src="img/som(6).png" alt="">
+                            <img src="img/som(6).jpg" alt="">
                             <h3>썸네일<span class="block"></span><span>06</span></h3>
                         </div>
                         <div>
-                            <img src="img/som(7).png" alt="">
+                            <img src="img/som(7).jpg" alt="">
                             <h3>썸네일<span class="block"></span><span>07</span></h3>
                         </div>
                         <div>
-                            <img src="img/som(8).png" alt="">
+                            <img src="img/som(8).jpg" alt="">
                             <h3>썸네일<span class="block"></span><span>08</span></h3>
                         </div>
                     </div>
@@ -427,27 +471,27 @@
                 <div class="detail">
                     <div class="detailcontents">
                         <div>
-                            <img src="img/datail(1).png" alt="">
+                            <img src="img/datail(1).jpg" alt="">
                             <h3>상세페이지<span class="block"></span><span>01</span></h3>
                         </div>
                         <div>
-                            <img src="img/datail(2).png" alt="">
+                            <img src="img/datail(2).jpg" alt="">
                             <h3>상세페이지<span class="block"></span><span>02</span></h3>
                         </div>
                         <div>
-                            <img src="img/datail(3).png" alt="">
+                            <img src="img/datail(3).jpg" alt="">
                             <h3>상세페이지<span class="block"></span><span>03</span></h3>
                         </div>
                         <div>
-                            <img src="img/datail(4).png" alt="">
+                            <img src="img/datail(4).jpg" alt="">
                             <h3>상세페이지<span class="block"></span><span>04</span></h3>
                         </div>
                         <div>
-                            <img src="img/datail(5).png" alt="">
+                            <img src="img/datail(5).jpg" alt="">
                             <h3>상세페이지<span class="block"></span><span>05</span></h3>
                         </div>
                         <div>
-                            <img src="img/datail(6).png" alt="">
+                            <img src="img/datail(6).jpg" alt="">
                             <h3>상세페이지<span class="block"></span><span>06</span></h3>
                         </div>
                     </div>
@@ -470,7 +514,7 @@
             </div>
         </section>
         <!-- portfoliovideo -->
-        <section id="portfoliovideo">
+        <section id="portfoliovideo" class="wheel">
             <div class="wrap">
                 <h2 class="h2">03<span class="h2-1">PORTFOLIO
                     <span class="block"></span>Video</span>
@@ -522,29 +566,29 @@
                     </div>
                     <div class="videocontents1">
                         <div>
-                            <img src="img/video.png" alt="">
+                            <img src="img/video.jpg" alt="">
                         </div>
                         <div>
-                            <img src="img/video1.png" alt="">
+                            <img src="img/video1.jpg" alt="">
                         </div>
                         <div>
-                            <img src="img/video2.png" alt="">
+                            <img src="img/video2.jpg" alt="">
                         </div>
                         <div>
-                            <img src="img/video3.png" alt="">
+                            <img src="img/video3.jpg" alt="">
                         </div>
                         <div>
-                            <img src="img/video4.png" alt="">
+                            <img src="img/video4.jpg" alt="">
                         </div>
                         <div>
-                            <img src="img/video5.png" alt="">
+                            <img src="img/video5.jpg" alt="">
                         </div>
                     </div>
                 </div>
             </div>
         </section>
         <!-- contact -->
-        <section id="contact">
+        <section id="contact" class="wheel">
             <div class="wrap">
                 <h2 class="h2">04<span class="h2-1">CONTACT</span></h2>
                 <div class="contents">
@@ -562,9 +606,8 @@
                 </div>
             </div>
         </section>
-    </main>
     <!-- .........하단 영역........ -->
-    <footer>
+    <footer class="wheel">
         <div class="wrap">
             <h1>nara</h1>
             <div>

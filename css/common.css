@@ -1,28 +1,28 @@
 .wrap{
   width: 1500px;
   margin: 0 auto;
-  padding: 100px 0;
+  padding: 155px 0;
 }
 .block{
   display: block
 }
 .h2{
-  font-size: 221px;
+  font-size: 170px;
   font-weight: 700;
   position: absolute;
   left: -126px;
-  top: 0px;
+  top: -37px;
   color: #606060;
   padding-top: 56px;
 }
 .h2-1{
-  font-size: 89px;
+  font-size: 80PX;
   position: absolute;
-  bottom: 11px;
   width: 481px;
   left: 147px;
   font-weight: 400;
   color: #f8a112;
+  top: 143px;
 }
 .hide{
   display: none;

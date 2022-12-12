@@ -200,13 +200,7 @@
     <script>
     $(document).ready(
         function(){
-            $('.somcontents').slick({
-                dots: true,
-                infinite: true,
-                speed: 300,
-                slidesToShow: 1,
-                adaptiveHeight: true
-            });
+            
             $('.videocontents').slick({
                 slidesToShow: 1,
                 slidesToScroll: 1,
@@ -221,6 +215,13 @@
                 dots: true,
                 centerMode: true,
                 focusOnSelect: true
+            });
+            $('.somcontents').slick({
+                dots: true,
+                infinite: true,
+                speed: 300,
+                slidesToShow: 1,
+                adaptiveHeight: true
             });
         }
         

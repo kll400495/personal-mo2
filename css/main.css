@@ -32,7 +32,7 @@ section#about div.wrap h2 span.h2-1 {
 section#about div.wrap img {
   width: 400px;
   height: 400px;
-  margin-top: 240px;
+  margin-top: 202px;
   background-image: url(../img/poto.png);
   background-size: 75%;
   background-repeat: no-repeat;
@@ -40,7 +40,7 @@ section#about div.wrap img {
   border: 1px solid white;
   background-position-x: 57px;
   background-color: #d9d9d9;
-  /*! margin-bottom: 70px; */
+  margin-right: 106px;
 }
 section#about div.wrap ul {
   margin-top: 200px;
@@ -50,8 +50,8 @@ section#about div.wrap ul li {
    
 }
 section#about div.wrap ul li:nth-child(1){
-  margin-bottom: 48px;
-  margin-top: 45px;
+  margin-bottom: 54px;
+  margin-top: 8px;
 }
 section#about div.wrap ul li h3 {
   font-size: 40px;
@@ -79,7 +79,7 @@ section#skill div.wrap h2.h2 span.h2-1{
     
 }
 section#skill div.wrap ul {
-  padding-top: 86px;
+  padding-top: 45px;
 }
 section#skill div.wrap ul li {
   display: flex;
@@ -241,7 +241,7 @@ section#portfolioweb div.wrap h2 {
     
 }
 section#portfolioweb div.wrap div.list {
-  margin-top: 284px;
+  margin-top: 182PX;
   overflow: hidden;
 }
 section#portfolioweb div.wrap div.list div.listcontents{
@@ -349,7 +349,7 @@ section#portfolioweb div.wrap span a:nth-child(2){
 }
 section#portfolioweb div.wrap p{
   position: absolute;
-  top: 356px;
+  top: 315px;
   left: 868px;
   color: #6a7a8d;
   animation: hover 1s infinite;
@@ -382,7 +382,7 @@ section#portfoliodesign div.wrap h2.h2 span {
   bottom: -80px;
 }
 section#portfoliodesign div.wrap nav {
-  padding-top: 281px;
+  padding-top: 113PX;
   position: relative;
 }
 section#portfoliodesign div.wrap nav ul.nav1 { 
@@ -392,8 +392,8 @@ section#portfoliodesign div.wrap nav ul.nav1 {
   color: #6a7a8d;
   font-weight: 500;
   position: absolute;
-  top: 210px;
-  right: 76px;
+  top: 73px;
+  right: 97px;
 }
 section#portfoliodesign div.wrap nav ul.nav1 li {
   padding: 0 30px;
@@ -408,16 +408,15 @@ section#portfoliodesign div.wrap nav ul.nav1 li a {
 /* 썸네일 */
 section#portfoliodesign div.wrap div.som {
   overflow: hidden;
+  position: relative;
 }
 section#portfoliodesign div.wrap div.som div.somcontents {
-/*   display: flex;
-  width: 800%; */
+/*! display: flex; */ /*! width: 800%; */
 margin: 0 auto;
-margin-top: 65px;
+margin-top: 70px;
 }
 section#portfoliodesign div.wrap div.som div.somcontents div{
-/*   width: calc(100% / 8);
-  display: flex;
+/*! width: calc(100% / 8); */ /*! display: flex; */ /*
   column-gap: 40px;
   padding-top: 18px;
   transition: all 1.5s; */
@@ -425,17 +424,20 @@ position: relative;
 padding-bottom: 41px;
 }
 section#portfoliodesign div.wrap div.som div.somcontents div img {
-  width: 788px;
+  width: 770px;
   /*! padding-left: 335px; */
-  height: 407px;
+  /*! height: 433px; */
   margin: 0 auto;
+  /*! padding-left: 414px; */
+  box-sizing: border-box;
+  /*! padding-right: 149px; */
 }
 section#portfoliodesign div.wrap div.som div.somcontents div h3 {
   color: white;
   font-size: 40px;
   position: absolute;
-  top: 0;
-  left: 121px;
+  top: 20px;
+  left: 231px;
 }
 section#portfoliodesign div.wrap div.som div.somcontents div h3 span {
   color: #f8a112;
@@ -472,23 +474,23 @@ section#portfoliodesign div.wrap div.detail div.detailcontents {
   width: 600%;
   display: flex;
   align-items: start;
-  height: 381px;
+  height: 489px;
   overflow: hidden;
-  margin-top: 65px;
+  margin-top: 60px;
 }
 section#portfoliodesign div.wrap div.detail div.detailcontents div {
   width: calc(100% / 6);
   display: flex;
-  padding-top: 18px;
-  column-gap: 40px;
   /*! height: 381px; */
   overflow: hidden;
   transition: all 1.5s;
+  position: relative;
 }
 section#portfoliodesign div.wrap div.detail div.detailcontents div img {
   width: 743px;
-  padding-left: 389px;
+  /*! padding-left: 389px; */
   display: block;
+  margin: 0 auto;
 }
 section#portfoliodesign div.wrap div.detail div.detailcontents div img:hover{
   animation: up 7s forwards linear;
@@ -496,6 +498,9 @@ section#portfoliodesign div.wrap div.detail div.detailcontents div img:hover{
 section#portfoliodesign div.wrap div.detail div.detailcontents div h3 {
   color: white;
   font-size: 30px;
+  position: absolute;
+  top: 21px;
+  right: 208px;
 }
 section#portfoliodesign div.wrap div.detail div.detailcontents div h3 span {
   color: #f8a112;
@@ -507,8 +512,8 @@ section#portfoliodesign div.wrap div.detail span {
 section#portfoliodesign div.wrap div.detail span a {
   color: white;
   position: absolute;
-  left: 299px;
-  top: 160px;
+  left: 269px;
+  top: 287px;
   background-image: url(../img/arrow.png);
   background-size: contain;
   width: 26px;
@@ -518,9 +523,9 @@ section#portfoliodesign div.wrap div.detail span a {
   transform: rotate(180deg);
 }
 section#portfoliodesign div.wrap div.detail span a:nth-child(2){
-  left: 1135px;
+  left: 1194px;
   transform: none;
-  top: 177px;
+  top: 300px;
 }
 /* 카드뉴스 */
 .center img{
@@ -542,13 +547,14 @@ section#portfoliodesign div.wrap div.detail span a:nth-child(2){
 }
 section#portfoliodesign div.wrap div.card {
   display: grid;
-  grid-template-columns: 200px 200px 200px 200px;
-  column-gap: 20px;
-  row-gap: 20px;
+  grid-template-columns: 200px 200px 200px 200px 200px 200px;
+  column-gap: 10px;
+  row-gap: 10px;
   justify-content: center;
+  margin-top: 30px;
 }
 section#portfoliodesign div.wrap div.card img {
-  width: 198px;
+  width: 200px;
   
 }
 section#portfoliodesign div.wrap div.card img:nth-child(1){
@@ -556,7 +562,7 @@ section#portfoliodesign div.wrap div.card img:nth-child(1){
   grid-column-end: 3;
   grid-row-start: 1;
   grid-row-end: 3;
-  width: 418px;
+  width: 409px;
 }
 /* ...........portfoliovideo......... */
 section#portfoliovideo {
@@ -564,18 +570,20 @@ section#portfoliovideo {
 }
 section#portfoliovideo div.wrap {
   position: relative;
+  height: 100%;
 }
 section#portfoliovideo div.wrap h2 {
   
 }
 section#portfoliovideo div.wrap h2 span {
-  bottom: -80px;
+  bottom: -76px;
 }
 section#portfoliovideo div.wrap div.video {
-  padding-top: 255px;
+  padding-top: 65px;
   overflow: hidden;
-  width: 1402px;
-  margin: 0 auto;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
 }
 section#portfoliovideo div.wrap div.video div.videocontents {
   display: flex;
@@ -586,13 +594,13 @@ section#portfoliovideo div.wrap div.video div.videocontents div {
   text-align: center;
 }
 section#portfoliovideo div.wrap div.video div.videocontents div iframe {
-  width:800px;
+  width:700px;
   height: 400px;
 }
 section#portfoliovideo div.wrap div.video div.videocontents div p {
   color: white;
   font-size: 24px;
-  padding-top: 20px;
+  padding-top: 60px;
   line-height: 1.5;
 }
 section#portfoliovideo div.wrap div.video div.videocontents div p span {
@@ -621,28 +629,60 @@ section#portfoliovideo div.wrap span a:nth-child(2){
   top: 581px;
 }
 .slick-dotted.slick-slider{
-  margin-top: 30px;
-  width: 1274px;
-  padding-bottom: 50px;
+  /*! width: 785px; */
+}
+.video .slick-dotted.slick-slider{
+  width: 786px;
+  /*! padding-bottom: 40px; */
+  margin: 0px auto;
+}
+.video .slick-dotted.slick-slider{
+  padding-bottom: 10px;
+  width: 700px;
+}
+.video .slick-slide img{
+  padding: 0 20px;
+  box-sizing: border-box;
 }
 .slick-slide img{
-  width: 70%;
+  width: 100%;
 }
 .slick-prev, .slick-next{
   z-index: 1;
+  top: 32px;
 }
 .slick-prev{
   left: 30px;
 }
+.video .slick-prev{
+  left: -73px;
+  top: 317px;
+}
 .slick-next{
   right: 30px;
 }
+.video .slick-next{
+  top: 317px;
+  right: -40px;
+}
 .slick-prev::before, .slick-next::before{
-  font-size: 44px;
+  position: absolute;
+}
+.som .slick-prev, .slick-next{
+  top: 257px;
+}
+.som .slick-prev{
+  left: 216px;
+}
+.som .slick-next{
+  right: 281px;
 }
 .slick-dots{
   position: absolute;
-  top: 435px;
+  top: 452px;
+}
+.video .slick-dots{
+  top: 530px;
 }
 .slick-dots li button{
 }
@@ -655,6 +695,7 @@ section#portfoliovideo div.wrap span a:nth-child(2){
 }
 .slick-slide .slick-active{
 }
+
 /* ...........contact......... */
 section#contact {
     
@@ -666,17 +707,18 @@ section#contact div.wrap h2 {
     
 }
 section#contact div.wrap div.contents{
-  margin-top: 208px;
+  margin-top: 60px;
   padding-left: 30px;
 }
 section#contact div.wrap div.contents p {
-  font-size: 44px;
+  font-size: 35px;
   color: white;
   line-height: 1.5;
+  margin-bottom: 62px;
 }
 section#contact div.wrap div.contents p span{
   color: #f8a112;
-  font-size: 54px;
+  font-size: 50px;
   font-weight: 500;
 }
 section#contact div.wrap div.contents h3 {

@@ -392,8 +392,9 @@ section#portfoliodesign div.wrap nav ul.nav1 {
   color: #6a7a8d;
   font-weight: 500;
   position: absolute;
-  top: 73px;
-  right: 97px;
+  top: 143px;
+  left: -12px;
+  z-index: 1;
 }
 section#portfoliodesign div.wrap nav ul.nav1 li {
   padding: 0 30px;
@@ -413,7 +414,7 @@ section#portfoliodesign div.wrap div.som {
 section#portfoliodesign div.wrap div.som div.somcontents {
 /*! display: flex; */ /*! width: 800%; */
 margin: 0 auto;
-margin-top: 70px;
+margin-top: 104px;
 }
 section#portfoliodesign div.wrap div.som div.somcontents div{
 /*! width: calc(100% / 8); */ /*! display: flex; */ /*
@@ -476,7 +477,7 @@ section#portfoliodesign div.wrap div.detail div.detailcontents {
   align-items: start;
   height: 489px;
   overflow: hidden;
-  margin-top: 60px;
+  margin-top: 108px;
 }
 section#portfoliodesign div.wrap div.detail div.detailcontents div {
   width: calc(100% / 6);
@@ -513,7 +514,7 @@ section#portfoliodesign div.wrap div.detail span a {
   color: white;
   position: absolute;
   left: 269px;
-  top: 287px;
+  top: 332px;
   background-image: url(../img/arrow.png);
   background-size: contain;
   width: 26px;
@@ -523,9 +524,9 @@ section#portfoliodesign div.wrap div.detail span a {
   transform: rotate(180deg);
 }
 section#portfoliodesign div.wrap div.detail span a:nth-child(2){
-  left: 1194px;
+  left: 1198px;
   transform: none;
-  top: 300px;
+  top: 349px;
 }
 /* 카드뉴스 */
 .center img{
@@ -551,7 +552,7 @@ section#portfoliodesign div.wrap div.card {
   column-gap: 10px;
   row-gap: 10px;
   justify-content: center;
-  margin-top: 30px;
+  margin-top: 129px;
 }
 section#portfoliodesign div.wrap div.card img {
   width: 200px;
@@ -579,7 +580,7 @@ section#portfoliovideo div.wrap h2 span {
   bottom: -76px;
 }
 section#portfoliovideo div.wrap div.video {
-  padding-top: 65px;
+  padding-top: 95px;
   overflow: hidden;
   display: flex;
   flex-direction: column-reverse;
@@ -667,9 +668,10 @@ section#portfoliovideo div.wrap span a:nth-child(2){
 }
 .slick-prev::before, .slick-next::before{
   position: absolute;
+  font-size: 38px;
 }
 .som .slick-prev, .slick-next{
-  top: 257px;
+  top: 232px;
 }
 .som .slick-prev{
   left: 216px;

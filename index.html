@@ -37,8 +37,8 @@
                 c4p=$("#portfolioweb").offset().top;
                 c5p=$("#portfolioweb").offset().top;
                 c6p=$("#portfoliodesign").offset().top;
-                c7p=$("#portfoliovideo").offset().top;
-                c8p=$("#contact").offset().top;
+                c7p=c6p+1000;
+                c8p=c7p+1040;
                 console.log("5:"+c5p);
                 console.log("6:"+c6p);
                 console.log("7:"+c7p);
@@ -173,16 +173,22 @@
                         return false; // a태그를 클릭시 새로고침되지 않게 처리
                     }
                 );
+                var detailN=0;
                 $(".lid").click(
                     function(){
                         $(".detail").show();
-                        $('.detailcontents').slick({
-                            dots: true,
-                            infinite: true,
-                            speed: 300,
-                            slidesToShow: 1,
-                            adaptiveHeight: true
-                        });
+                        if(detailN==0){
+                            detailN=1;
+                            $('.detailcontents').slick({
+                                dots: true,
+                                infinite: true,
+                                speed: 300,
+                                slidesToShow: 1,
+                                adaptiveHeight: true
+                            });
+                        }else{
+                            
+                        }
                         $(".som, .card").hide();
                         return false; // a태그를 클릭시 새로고침되지 않게 처리
                     }
@@ -646,7 +652,7 @@
                         <span class="block"></span>
                         바쁜시간 내주셔서 <span>감사합니다</span>
                     </p>
-                    <div class="padlet-embed" style="border:1px solid rgba(0,0,0,0.1);border-radius:2px;box-sizing:border-box;overflow:hidden;position:relative;width:100%;background:#F4F4F4"><p style="padding:0;margin:0"><iframe src="https://padlet.com/embed/s8ckg8a6qe36u7nd" frameborder="0" allow="camera;microphone;geolocation" style="width:100%;height:608px;display:block;padding:0;margin:0"></iframe></p><div style="display:flex;align-items:center;justify-content:end;margin:0;height:28px"><a href="https://padlet.com?ref=embed" style="display:block;flex-grow:0;margin:0;border:none;padding:0;text-decoration:none" target="_blank"><div style="display:flex;align-items:center;"><img src="https://padlet.net/embeds/made_with_padlet_2022.png" width="114" height="28" style="padding:0;margin:0;background:0 0;border:none;box-shadow:none" alt="Padlet으로 만듦"></div></a></div></div>
+                    <div class="padlet-embed" style="border:1px solid rgba(0,0,0,0.1);border-radius:2px;box-sizing:border-box;overflow:hidden;width:480px;height:352px;max-width:100%"><iframe src="https://padlet.com/padlets/1ka2f5m4pfiqfqyv/embeds/preview_embed" style="width:100%;height:100%;display:block;padding:0;margin:0" frameborder="0"></iframe></div>
                     <h3>EMAIL</h3>
                     <p class="email">kll400495@gmail.com</p>
                 </div>

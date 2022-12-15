@@ -7,10 +7,10 @@ div#title .wrap {
 div#title .wrap h2 {  
   font-size: 123px;
   font-weight: 700;
+  margin-top: 190px;
   color: transparent;
   -webkit-text-stroke: #f8a112 2px;
   color: #f8a112;
-  margin: 59px 0;
 }
 div#title .wrap h2 span{
   color: transparent;

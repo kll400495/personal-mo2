@@ -9,26 +9,21 @@ header {
 header div.wrap {
   display: flex;
   justify-content: space-between;
-  margin-top: 60px;
+  margin-top: 35px;
   align-items: baseline;
-  border-bottom: 1px solid #474d57;
+  border-bottom: 1px solid white;
   padding: 0;
 }
 header div.wrap h1 {
-  background-image: url(../img/h1.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  width: 324px;
-  height: 72px;
+  font-size: 38px;
 }
 header div.wrap h1 a {
   color: white;
-  font-size: 0;
 }
 header div.wrap h1 a span{
-  font-size: 59px;
+  font-size: 73px;
   font-weight: 700;
-  color: transparent;
+  color: #F8A112;
 }
 header div.wrap nav {
   font-size: 23px;
@@ -47,7 +42,6 @@ header div.wrap nav ul.gnb li a {
   padding: 0px 39px;
   color: white;
   padding-bottom: 14px;
-  transition: all 0.5s;
 }
 header div.wrap nav ul.gnb li a:hover{
   color:#F8A112;

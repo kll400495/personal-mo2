@@ -61,6 +61,22 @@ section#about div.wrap ul li h3 {
 section#about div.wrap ul li p {
   font-size: 20px;
   color: white;
+  word-spacing: 10px;
+}
+section#about div.wrap ul li:nth-child(1) p span{
+  color: #9f9f9f;
+  margin-right: 15px;
+}
+section#about div.wrap ul li:nth-child(1) p span:nth-child(1){
+  letter-spacing: 9px;
+  margin-right: 6px;
+}
+section#about div.wrap ul li:nth-child(1) p span:nth-child(3){
+  /*! letter-spacing: 1px; */
+}
+section#about div.wrap ul li:nth-child(1) p span:nth-child(5){
+letter-spacing: 5px;
+margin-right: 10px;
 }
 section#about div.wrap ul li p span{
   color: #f8a112;
@@ -246,22 +262,26 @@ section#portfolioweb div.wrap div.list {
 }
 section#portfolioweb div.wrap div.list div.listcontents{
   height: 380px;
-  width: 300%;
+  /*! width: 300%; */
   /*! display: flex; */
   align-items: start;
 }
-section#portfolioweb div.wrap div.list div.listcontents>div {
+section#portfolioweb div.wrap div.list div.listcontents figure {
   width: 100%;
-  display: flex;
+  /*! display: flex; */
   transition: all 1.5s;
+  position: relative;
+  display: flex;
+  margin-left: 100px;
 }
-section#portfolioweb div.wrap div.list div.listcontents div img {
-  width: 721px;
-  padding-left: 200px;
+section#portfolioweb div.wrap div.list div.listcontents figure img {
+  /*! width: 721px; */
+  /*! padding-left: 200px; */
   display: block;
+  width: 60%;
 }
 
-section#portfolioweb div.wrap div.list div.listcontents div img:hover{
+section#portfolioweb div.wrap div.list div.listcontents figure img:hover{
   animation: up 8s forwards linear;
 }
 @keyframes up{
@@ -269,10 +289,10 @@ section#portfolioweb div.wrap div.list div.listcontents div img:hover{
     
   }
   100%{
-    transform: translateY(-1360px);
+    transform: translateY(-2550px);
   }
 }
-section#portfolioweb div.wrap div.list div.listcontents div:nth-child(2) img:hover{
+section#portfolioweb div.wrap div.list div.listcontents figure:nth-child(2) img:hover{
   animation: up1 8s forwards linear;
 }
 @keyframes up1{
@@ -280,10 +300,10 @@ section#portfolioweb div.wrap div.list div.listcontents div:nth-child(2) img:hov
     
   }
   100%{
-    transform: translateY(-1530px);
+    transform: translateY(-1610px);
   }
 }
-section#portfolioweb div.wrap div.list div.listcontents div:nth-child(3) img:hover{
+section#portfolioweb div.wrap div.list div.listcontents figure:nth-child(3) img:hover{
   animation: up2 8s forwards linear;
 }
 @keyframes up2{
@@ -291,38 +311,39 @@ section#portfolioweb div.wrap div.list div.listcontents div:nth-child(3) img:hov
     
   }
   100%{
-    transform: translateY(-2170px);
+    transform: translateY(-1900px);
   }
 }
-section#portfolioweb div.wrap div.list  div.listcontents div div.contents{
-  
+section#portfolioweb div.wrap div.list  div.listcontents figure figcaption.contents{
+  position: absolute;
+  top: 0;
+  left: 865px;
+  width: 40%;
 }
-section#portfolioweb div.wrap div.list div.listcontents div div.contents h3 {
+section#portfolioweb div.wrap div.list div.listcontents figure figcaption.contents h3 {
   color: transparent;
-  font-size: 50px;
-  padding-left: 80px;
+  font-size: 55px;
+  padding-left: 50px;
   font-weight: 800;
   -webkit-text-stroke: 2px white;
 }
-section#portfolioweb div.wrap div.list div.listcontents div div.contents ul {
-  padding-left: 80px;
-  font-size: 25px;
-  padding-top: 123px;
+section#portfolioweb div.wrap div.list div.listcontents figure figcaption.contents>p {
+  padding-left: 50px;
+  font-size: 30px;
   line-height: 1.5;
-  margin-bottom: 57px;
-}
-section#portfolioweb div.wrap div.list div.listcontents div div.contents ul li {
+  margin-bottom: 47px;
+  margin-top: 99px;
   color: white;
 }
-section#portfolioweb div.wrap div.list div.listcontents div div.contents a {
-  border: 2px solid white;
+section#portfolioweb div.wrap div.list div.listcontents figure figcaption.contents a {
+  border: 3px solid white;
   padding: 10px 36px;
   border-radius: 25px;
   color: white;
-  margin-left: 80px;
+  margin-left: 50px;
   transition: all 0.5s;
 }
-section#portfolioweb div.wrap div.list div.listcontents div div.contents a:hover{
+section#portfolioweb div.wrap div.list div.listcontents figure figcaption.contents a:hover{
   background-color: #fff;
   color: #1a2b49;
 }
@@ -347,10 +368,10 @@ section#portfolioweb div.wrap span a:nth-child(2){
   transform: none;
   top: 581px;
 }
-section#portfolioweb div.wrap p{
+section#portfolioweb div.wrap>p{
   position: absolute;
-  top: 315px;
-  left: 868px;
+  top: 313px;
+  left: 897px;
   color: #6a7a8d;
   animation: hover 1s infinite;
   animation-timing-function: step-end;
@@ -366,10 +387,19 @@ section#portfolioweb div.wrap p{
   
   }
 }
+#portfolioweb .slick-dots{
+  overflow: visible;
+  top: 388px;
+  right: -466px;
+}
+#portfolioweb .slick-dots li{
+  overflow: visible;  
+}
 /* ...........portfoliodesign......... */
 /* 메뉴 */
 section#portfoliodesign {
-  position: relative;
+position: relative;
+overflow: hidden;
 }
 section#portfoliodesign div.wrap {
   position: relative;
@@ -388,7 +418,7 @@ section#portfoliodesign div.wrap nav {
 section#portfoliodesign div.wrap nav ul.nav1 { 
   display: flex;
   /*! column-gap: 60px; */
-  font-size: 30px;
+  font-size: 25px;
   color: #6a7a8d;
   font-weight: 500;
   position: absolute;
@@ -469,41 +499,98 @@ section#portfoliodesign div.wrap div.som span.button a:nth-child(2){
 /* 상세페이지 */
 section#portfoliodesign div.wrap div.detail {
   position: relative;
-  overflow: hidden;
+  /*! overflow: hidden; */
 }
 section#portfoliodesign div.wrap div.detail div.detailcontents {
-  width: 600%;
-  display: flex;
+  /*! width: 100%; */
+  /*! display: flex; */
   align-items: start;
-  height: 489px;
+  height: 430px;
   overflow: hidden;
   margin-top: 108px;
 }
-section#portfoliodesign div.wrap div.detail div.detailcontents div {
-  width: calc(100% / 6);
-  display: flex;
+section#portfoliodesign div.wrap div.detail div.detailcontents figure {
+  /*! width: 100%; */
+  /*! display: flex; */
   /*! height: 381px; */
-  overflow: hidden;
+  /*! overflow: hidden; */
   transition: all 1.5s;
   position: relative;
 }
-section#portfoliodesign div.wrap div.detail div.detailcontents div img {
+section#portfoliodesign div.wrap div.detail div.detailcontents figure img {
   width: 743px;
   /*! padding-left: 389px; */
   display: block;
   margin: 0 auto;
 }
-section#portfoliodesign div.wrap div.detail div.detailcontents div img:hover{
-  animation: up 7s forwards linear;
+section#portfoliodesign div.wrap div.detail div.detailcontents figure img:hover{
+  animation: up3 25s forwards linear;
 }
-section#portfoliodesign div.wrap div.detail div.detailcontents div h3 {
+@keyframes up3{
+    0%{transform: translateY(0);
+  }
+  100%{
+    transform: translateY(-9250px);
+  }
+}
+section#portfoliodesign div.wrap div.detail div.detailcontents figure:nth-child(2) img:hover{
+  animation: up4 25s forwards linear;
+}
+@keyframes up4{
+    0%{transform: translateY(0);
+  }
+  100%{
+    transform: translateY(-6550px);
+  }
+}
+section#portfoliodesign div.wrap div.detail div.detailcontents figure:nth-child(3) img:hover{
+  animation: up5 25s forwards linear;
+}
+@keyframes up5{
+    0%{transform: translateY(0);
+  }
+  100%{
+    transform: translateY(-8100px);
+  }
+}
+section#portfoliodesign div.wrap div.detail div.detailcontents figure:nth-child(4) img:hover{
+  animation: up6 25s forwards linear;
+}
+@keyframes up6{
+    0%{transform: translateY(0);
+  }
+  100%{
+    transform: translateY(-6310px);
+  }
+}
+section#portfoliodesign div.wrap div.detail div.detailcontents figure:nth-child(5) img:hover{
+  animation: up7 25s forwards linear;
+}
+@keyframes up7{
+    0%{transform: translateY(0);
+  }
+  100%{
+    transform: translateY(-4510px);
+  }
+}
+section#portfoliodesign div.wrap div.detail div.detailcontents figure:nth-child(6) img:hover{
+  animation: up8 25s forwards linear;
+}
+@keyframes up8{
+    0%{transform: translateY(0);
+  }
+  100%{
+    transform: translateY(-9400px);
+  }
+}
+section#portfoliodesign div.wrap div.detail div.detailcontents figure figcaption h3 {
   color: white;
   font-size: 30px;
   position: absolute;
   top: 21px;
   right: 208px;
 }
-section#portfoliodesign div.wrap div.detail div.detailcontents div h3 span {
+section#portfoliodesign div.wrap div.detail div.detailcontents figure figcaption span {
   color: #f8a112;
   font-weight: 400;
   font-size: 43px;
@@ -527,6 +614,15 @@ section#portfoliodesign div.wrap div.detail span a:nth-child(2){
   left: 1198px;
   transform: none;
   top: 349px;
+}
+section#portfoliodesign div.wrap div.detail p{
+  position: absolute;
+  top: -25px;
+  left: 1071px;
+  color: #6a7a8d;
+  animation: hover 1s infinite;
+  animation-timing-function: ease;
+  animation-timing-function: step-end;
 }
 /* 카드뉴스 */
 .center img{
@@ -554,20 +650,23 @@ section#portfoliodesign div.wrap div.card {
   justify-content: center;
   margin-top: 129px;
 }
-section#portfoliodesign div.wrap div.card img {
-  width: 200px;
-  
-}
+
 section#portfoliodesign div.wrap div.card img:nth-child(1){
+  width: 408px;
   grid-column-start: 1;
   grid-column-end: 3;
   grid-row-start: 1;
   grid-row-end: 3;
   width: 409px;
+  position: relative;
+}
+section#portfoliodesign div.wrap div.card img{
+  width: 200px;
+  cursor: pointer;
 }
 /* ...........portfoliovideo......... */
 section#portfoliovideo {
-  
+
 }
 section#portfoliovideo div.wrap {
   position: relative;
@@ -652,8 +751,20 @@ section#portfoliovideo div.wrap span a:nth-child(2){
   z-index: 1;
   top: 32px;
 }
+#portfolioweb .slick-prev{
+  top: 233px;  
+  left: 12px;
+}
 .slick-prev{
   left: 30px;
+}
+.detail .slick-prev{
+  left: 265px;
+  top: 217px;
+}
+.detail .slick-next{
+  right: 308px;
+  top: 217px;
 }
 .video .slick-prev{
   left: -73px;
@@ -683,8 +794,20 @@ section#portfoliovideo div.wrap span a:nth-child(2){
   position: absolute;
   top: 452px;
 }
+.detail .slick-dots{
+  top: 280px;
+  width: 32px;
+  height: 29px;
+  right: 1138px;
+}
+.detail .slick-dots li button::before{
+  color: #fff;
+}
+.detail .slick-dots li.slick-active button::before{
+  color: #fff;
+}
 .video .slick-dots{
-  top: 530px;
+  top: 516px;
 }
 .slick-dots li button{
 }
@@ -711,6 +834,7 @@ section#contact div.wrap h2 {
 section#contact div.wrap div.contents{
   margin-top: 60px;
   padding-left: 30px;
+  position: relative;
 }
 section#contact div.wrap div.contents p {
   font-size: 35px;
@@ -725,26 +849,23 @@ section#contact div.wrap div.contents p span{
 }
 section#contact div.wrap div.contents h3 {
   font-size: 40px;
-  margin-top: 45px;
+  margin-top: -37px;
   color: #6a7a8d;
   font-weight: 500;
 }
 section#contact div.wrap div.contents p.email {
   border: 2px solid #6a7a8d;
-  padding: 38px;
+  padding: 25px;
   text-align: center;
-  margin-top: 10px;
+  margin-top: 2px;
+  width: 725px;
+}
+.padlet-embed{
+  position: absolute;
+  top: 25px;
+  right: 128px;
+}
+.contents iframe{
+  
 }
 
-#portfolio{
-  
-}
-#portfolio div.wrap{
-  
-}
-#portfolio div.wrap ul.portani{
-  
-}
-#portfolio div.wrap ul.portani li{
-  
-}

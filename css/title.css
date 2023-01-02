@@ -1,16 +1,17 @@
-div#title {
+div#title{
     
+  position: relative;
 }
-div#title .wrap {
+div#title .wrap{
   height: 100%;
 }
-div#title .wrap h2 {  
+div#title .wrap h2{  
   font-size: 123px;
   font-weight: 700;
-  margin-top: 190px;
   color: transparent;
   -webkit-text-stroke: #f8a112 2px;
   color: #f8a112;
+  margin: 59px 0;
 }
 div#title .wrap h2 span{
   color: transparent;
@@ -19,4 +20,36 @@ div#title .wrap h2 span{
 div#title .wrap h2 span:nth-child(4){
   color: transparent;
   -webkit-text-stroke: #f8a112 2px;
+}
+div#title .wrap ul{
+  right: 37px;
+  top: 303px;
+  text-align: end;
+  position: fixed;
+  z-index: 1;
+  font-size: 13px;
+}
+div#title .wrap ul li{
+
+}
+div#title .wrap ul li:nth-child(4){
+  display: none;
+}
+div#title .wrap ul li a{
+  line-height: 3;
+  color: white;
+  position: relative;
+  transition: all 0.5s;
+}
+div#title .wrap ul li a:hover{
+  color: #f8a112;
+  font-size: 15px;
+}
+div#title .wrap ul li a::after{
+  content: "●";
+  color: #fff;
+  font-size: 5px;
+  padding-left: 7px;
+  position: absolute;
+  top: 5px;
 }

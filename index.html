@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>김나라's 개인포트폴리오</title>
     <link rel="stylesheet" href="css/reset.css">
+    
     <!-- .........구글폰트........ -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,6 +17,14 @@
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/title.css">
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        $(document).ready(function(){
+            AOS.init();
+        });
+    </script>
    
     <link rel="stylesheet" href="css/footer.css">
     <!-- <script src="js/jquery-1.6.2.min.js"></script> -->
@@ -37,8 +46,11 @@
                 c4p=$("#portfolioweb").offset().top;
                 c5p=$("#portfolioweb").offset().top;
                 c6p=$("#portfoliodesign").offset().top;
-                c7p=$("#portfoliovideo").offset().top;
-                c8p=$("#contact").offset().top;
+                c7p=c6p+1000;
+                c8p=c7p+1040;
+                console.log("5:"+c5p);
+                console.log("6:"+c6p);
+                console.log("7:"+c7p);
                 $(".c1").click(function(){
                     $("html,body").animate({scrollTop:c1p},500);
                     return false;
@@ -70,138 +82,17 @@
                 $(".c8").click(function(){
                     $("html,body").animate({scrollTop:c8p},500);
                     return false;      
-                }); 
-                            
-                // 포폴 웹부분 넘기기
-                var n=0;
-                $("section#portfolioweb div.wrap span a").eq(0).hide();
-                $("section#portfolioweb div.wrap span a").eq(1).click(
-                    function(){
-                        if(n<2){
-                            n+=1;
-                            $("section#portfolioweb div.wrap div.list div.listcontents > div").css("transform","translateX("+(-100)*n+"%)");
-                            $("section#portfolioweb div.wrap div.list div.listcontents > div").animate({"opacity":1},1500,function(){
-                                if(n==2){
-                                     $("section#portfolioweb div.wrap span a").eq(1).hide(100);
-                                }
-                            $("section#portfolioweb div.wrap span a").eq(0).show(100);
-					});
-                        }else{
-
-                        }
-                        return false;
-                    }
-                );
-                $("section#portfolioweb div.wrap span a").eq(0).click(
-                    function(){
-                        if(n>0){
-                            n-=1;
-                            $("section#portfolioweb div.wrap div.list div.listcontents > div").css("transform","translateX("+(-100)*n+"%)");
-                            $("section#portfolioweb div.wrap span a").eq(1).show(1000);
-                            $("section#portfolioweb div.wrap div.list div.listcontents > div").animate({"opacity":1},1500,function(){
-                                if(n==0){
-                                $("section#portfolioweb div.wrap span a").eq(0).hide(100)
-                                } 
-                            });
-                            // if(n==0){
-                            //     $("section#portfolioweb div.wrap span a").eq(0).hide(300)
-                            // }
-                        }else{
-
-                        }
-                        return false;
-                    }
-                );    
-                //포폴 디자인 부분 메뉴바 
-                $(".detailcontents, .card").hide();
-                $(".lis").click(
-                    function(){
-                        $(".somcontents").show();
-                        $(".detailcontents, .card").hide();
-                        return false; // a태그를 클릭시 새로고침되지 않게 처리
-                    }
-                );
-                $(".lid").click(
-                    function(){
-                        $(".detailcontents").show();
-                        $(".somcontents, .card").hide();
-                        return false; // a태그를 클릭시 새로고침되지 않게 처리
-                    }
-                );
-                $(".lic").click(
-                    function(){
-                        $(".card").show();
-                        $(".detailcontents, .somcontents").hide();
-                        return false; // a태그를 클릭시 새로고침되지 않게 처리
-                    }
-                );
-                
-                // 포폴 디자인 썸네일 부분 넘기기
-                
-                // 포폴 디자인 상세페이지 부분 넘기기
-                $("section#portfoliodesign div.wrap div.detail span a").eq(0).hide();
-                $("section#portfoliodesign div.wrap div.detail span a").eq(1).click(
-                    function(){
-                        if(n<5){
-                            n+=1;
-                            $("section#portfoliodesign div.wrap div.detail div.detailcontents div").css("transform","translateX("+(-100)*n+"%)");
-                            
-                        }else{
-
-                        }
-                        return false;
-                    }
-                );
-                $("section#portfoliodesign div.wrap div.detail span a").eq(0).click(
-                    function(){
-                        if(n>0){
-                            n-=1;
-                            $("section#portfoliodesign div.wrap div.detail div.detailcontents div").css("transform","translateX("+(-100)*n+"%)");
-                        }else{
-
-                        }
-                        return false;
-                    }
-                ); 
-                // 포폴 디자인 카드뉴스부분
-                $("section#portfoliodesign div.wrap div.card img").click(
-                    function(){
-                        $(".graphic").remove();
-                        $("section#portfoliodesign").append("<div class='graphic'><div class='center'></div></div>");
-                        $(".graphic").hide().fadeIn();
-                        $(this).clone().appendTo(".center");
-                        $(".center").append("<a class='close'>✖</a>");
-                        $(".center .close").click(
-                            function(){
-                            $(".graphic").fadeOut(500,function(){
-                                $(this).remove();
-                            });
-                            }
-                        );
-                        $(".graphic").click(
-                            function(){
-                            $(".graphic").fadeOut(500,function(){
-                                $(this).remove();
-                            });
-                            }
-                        );
-                        $(".center").click(function(e){
-                            e. stopPropagation();
-                        });
-                    }
-                ); 
-                   
+                });       
             } 
         );
-        
     </script>
+
     <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
     <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
     <script type="text/javascript" src="slick/slick.min.js"></script>
     <script>
     $(document).ready(
         function(){
-            
             $('.videocontents').slick({
                 slidesToShow: 1,
                 slidesToScroll: 1,
@@ -224,16 +115,83 @@
                 slidesToShow: 1,
                 adaptiveHeight: true
             });
-            // $('.listcontents').slick({
-            //     dots: true,
-            //     infinite: true,
-            //     speed: 300,
-            //     slidesToShow: 1,
-            //     adaptiveHeight: true
-            // });
+            $('.listcontents').slick({
+                dots: true,
+                infinite: true,
+                speed: 300,
+                slidesToShow: 1,
+                adaptiveHeight: true
+            });
         }
-        
     );
+    </script>
+
+    <script>
+        $(document).ready(function(){
+            //포폴 디자인 부분 메뉴바 
+            $(".detail, .card").hide();
+            $(".lis").click(
+                function(){
+                    $(".som").show();
+                    $(".detail, .card").hide();
+                    return false; // a태그를 클릭시 새로고침되지 않게 처리
+                }
+            );
+            var detailN=0;
+            $(".lid").click(
+                function(){
+                    $(".detail").show();
+                    if(detailN==0){
+                        detailN=1;
+                        $('.detailcontents').slick({
+                            dots: true,
+                            infinite: true,
+                            speed: 300,
+                            slidesToShow: 1,
+                            adaptiveHeight: true
+                        });
+                    }else{
+                            
+                    }
+                    $(".som, .card").hide();
+                    return false; // a태그를 클릭시 새로고침되지 않게 처리
+                }
+            );
+            $(".lic").click(
+                function(){
+                    $(".card").show();
+                    $(".detail, .som").hide();
+                    return false; // a태그를 클릭시 새로고침되지 않게 처리
+                }
+            );               
+            // 포폴 디자인 카드뉴스부분
+            $("section#portfoliodesign div.wrap div.card img").click(
+                function(){
+                    $(".graphic").remove();
+                    $("section#portfoliodesign").append("<div class='graphic'><div class='center'></div></div>");
+                    $(".graphic").hide().fadeIn();
+                    $(this).clone().appendTo(".center");
+                    $(".center").append("<a class='close'>✖</a>");
+                    $(".center .close").click(
+                        function(){
+                            $(".graphic").fadeOut(500,function(){
+                                $(this).remove();
+                            });
+                        }
+                    );
+                    $(".graphic").click(
+                        function(){
+                            $(".graphic").fadeOut(500,function(){
+                                $(this).remove();
+                            });
+                        }
+                    );
+                    $(".center").click(function(e){
+                        e. stopPropagation();
+                    });
+                }
+            ); 
+        });
     </script>
     <link rel="stylesheet" href="css/main.css">
     <!-- 마우스 휠 -->
@@ -269,7 +227,6 @@
                             }catch(e){}
                         }
                     }
-                     
                     // 화면 이동 0.8초(800)
                     $("html,body").stop().animate({
                         scrollTop: moveTop + 'px'
@@ -281,6 +238,7 @@
             });
         }
     </script>
+    <link rel="stylesheet" href="css/mobile.css">    
 </head>
 <body>
     <!-- .........상단 영역........ -->
@@ -293,10 +251,10 @@
                         <a href="">Home</a>
                     </li>
                     <li class="c2">
-                        <a href="">About </a>
+                        <a href="">About</a>
                     </li>
                     <li class="c3">
-                        <a href="">Skill </a>
+                        <a href="">Skill</a>
                     </li>
                     <li class="c4">
                         <a href="">Portfolio</a>
@@ -319,27 +277,37 @@
     <!-- .........타이틀 영역........ -->
     <div id="title" class="wheel">
         <div class="wrap">
-            <h2>WEB<span class="block"></span>
+            <h2 data-aos="flip-left">WEB<span class="block"></span>
                 <span>DESIGNER</span><span class="block"></span>
                 <span>&PUBLISHER</span>
             </h2>
+            <ul>
+                <li class="c1"><a href="">Home</a></li>
+                <li class="c2"><a href="">About</a></li>
+                <li class="c3"><a href="">Skill</a></li>
+                <li class="c4"><a href="">Portfolio</a></li>
+                <li class="c5"><a href="">Web</a></li>
+                <li class="c6"><a href="">Design</a></li>
+                <li class="c7"><a href="">Video</a></li>
+                <li class="c8"><a href="">Contact</a></li>
+            </ul>
         </div>
     </div>
     <!-- .........메인 영역........ -->
         <!-- about -->
         <section id="about" class="wheel">
             <div class="wrap">
-                <h2 class="h2">01<span class="h2-1">ABOUT ME</span></h2>
-                <img src="poto.png" alt="">
+                <h2 data-aos="fade-right" class="h2">01<span class="h2-1">ABOUT ME</span></h2>
+                <img data-aos="zoom-in" src="poto.png" alt="">
                 <ul>
-                    <li>
+                    <li data-aos="flip-down">
                         <h3>Profile</h3>
-                        <p>name : 김나라<span class="block"></span>
-                            birthday : 1995.03.07<span class="block"></span>
-                            phone : 010.2224.3184
+                        <p><span>name</span>김나라<span class="block"></span>
+                            <span>birthday</span>1995.03.07<span class="block"></span>
+                            <span>phone</span>010.2224.3184
                         </p>
                     </li>
-                    <li>
+                    <li data-aos="flip-down">
                         <h3>Career</h3>
                         <p>2022.09.22 ~ 2022.12.15 
                             <span>SBS컴퓨터 아트학원 수료(UX,UI 과정)</span>
@@ -360,8 +328,8 @@
         <!-- skil -->
         <section id="skill" class="wheel">
             <div class="wrap">
-                <h2 class="h2">02<span class="h2-1">SKILL</span></h2>
-                <ul>
+                <h2 data-aos="fade-right" class="h2">02<span class="h2-1">SKILL</span></h2>
+                <ul data-aos="fade-down">
                     <li><img src="img/skill(1).png" alt=""><span class="gauge"></span></li>
                     <li><img src="img/skill(2).png" alt=""><span class="gauge"></span></li>
                     <li><img src="img/skill(3).png" alt=""><span class="gauge"></span></li>
@@ -374,60 +342,56 @@
         <!-- portfolioweb -->
         <section id="portfolioweb" class="wheel">
             <div class="wrap">
-                <h2 class="h2">03<span class="h2-1">PORTFOLIO
+                <h2 data-aos="fade-right" class="h2">03<span class="h2-1">PORTFOLIO
                     <span class="block"></span>Web</span>
                 </h2>
                 <div class="list">
                     <div class="listcontents">
-                        <div>
+                        <figure>
                             <img src="img/renewal(1).jpg" alt="">
-                            <div class="contents">
+                            <figcaption class="contents">
                                 <h3>LUNA BREW</h3>
-                                <ul>
-                                    <li>컨셉 : 심플</li>
-                                    <li>응용프로그램 : Ai, Ps, html, css</li>
-                                    <li>제작기간 : 0일</li>
-                                </ul>
-                                <a href="https://kll400495.github.io/pf3-mo/" class="page">VIEW</a>
-                            </div>
-                        </div>
-                        <div>
+                                <p>
+                                    컨셉 : 심플<span class="block"></span>
+                                    응용프로그램 : Ai, Ps, html, css<span class="block"></span>
+                                    제작기간 : 1~2일
+                                </p>
+                                <a href="https://kll400495.github.io/pf3-mo/" class="page" target="_blank">VIEW</a>
+                            </figcaption>
+                        </figure>
+                        <figure>
                             <img src="img/renewal(2).jpg" alt="">
-                            <div class="contents">
+                            <figcaption class="contents">
                                 <h3>현대건설</h3>
-                                <ul>
-                                    <li>컨셉 : 심플</li>
-                                    <li>응용프로그램 : Ai, Ps, html, css</li>
-                                    <li>제작기간 : 0일</li>
-                                </ul>
-                                <a href="https://kll400495.github.io/Hyundai/" class="page">VIEW</a>
-                            </div>
-                        </div>
-                        <div>
+                                <p>
+                                    컨셉 : 심플<span class="block"></span>
+                                    응용프로그램 : Ai, Ps, html, css<span class="block" ></span>
+                                    제작기간 : 1~2일
+                                </p>
+                                <a href="https://kll400495.github.io/Hyundai/" class="page" target="_blank">VIEW</a>
+                            </figcaption>
+                        </figure>
+                        <figure>
                             <img src="img/renewal(3).jpg" alt="">
-                            <div class="contents">
+                            <figcaption class="contents">
                                 <h3>PORTFOLIO</h3>
-                                <ul>
-                                    <li>컨셉 : 심플</li>
-                                    <li>응용프로그램 : Ai, Ps, html, css, js</li>
-                                    <li>제작기간 : 0일</li>
-                                </ul>
-                                <a href="https://kll400495.github.io/personal-js/" class="page">VIEW</a>
-                            </div>    
-                        </div>
+                                <p>
+                                    컨셉 : 심플<span class="block"></span>
+                                    응용프로그램 : Ai, Ps, html, css<span class="block"></span>
+                                    제작기간 : 2~3일
+                                </p>
+                                <a href="https://kll400495.github.io/personal-js/" class="page" target="_blank">VIEW</a>
+                            </figcaption>    
+                        </figure>
                     </div>
                 </div>
-                <!-- <span class="button">
-                    <a href="">이전</a>
-                    <a href="">다음</a>
-                </span> -->
-                <!-- <p>hover</p> -->
+                <p>hover</p>
             </div>
         </section>
         <!-- portfoliodesign -->
         <section id="portfoliodesign" class="wheel">
             <div class="wrap">
-                <h2 class="h2">03<span class="h2-1">PORTFOLIO
+                <h2 data-aos="fade-right" class="h2">03<span class="h2-1">PORTFOLIO
                     <span class="block"></span>Design</span>
                 </h2>
                 <nav>
@@ -472,46 +436,63 @@
                             <h3>썸네일<span class="block"></span><span>08</span></h3>
                         </div>
                     </div>
-                    <!-- <span class="button">
-                        <a href="">이전</a>
-                        <a href="">다음</a>
-                    </span>     -->
                 </div>
                 <div class="detail">
                     <div class="detailcontents">
-                        <div>
+                        <figure>
                             <img src="img/datail(1).jpg" alt="">
-                            <h3>상세페이지<span class="block"></span><span>01</span></h3>
-                        </div>
-                        <div>
+                            <figcaption>
+                                <h3>상세페이지<span class="block"></span>
+                                    <span>01</span>
+                                </h3>
+                            </figcaption>
+                        </figure>
+                        <figure>
                             <img src="img/datail(2).jpg" alt="">
-                            <h3>상세페이지<span class="block"></span><span>02</span></h3>
-                        </div>
-                        <div>
+                            <figcaption>
+                                <h3>상세페이지<span class="block"></span>
+                                <span>02</span>
+                                </h3>
+                            </figcaption>
+                        </figure>
+                        <figure>
                             <img src="img/datail(3).jpg" alt="">
-                            <h3>상세페이지<span class="block"></span><span>03</span></h3>
-                        </div>
-                        <div>
+                            <figcaption>
+                                <h3>상세페이지<span class="block"></span>
+                                    <span>03</span>
+                                </h3>
+                            </figcaption>
+                        </figure>
+                        <figure>
                             <img src="img/datail(4).jpg" alt="">
-                            <h3>상세페이지<span class="block"></span><span>04</span></h3>
-                        </div>
-                        <div>
+                            <figcaption>
+                                <h3>상세페이지<span class="block"></span>
+                                    <span>04</span>
+                                </h3>
+                            </figcaption>
+                        </figure>
+                        <figure>
                             <img src="img/datail(5).jpg" alt="">
-                            <h3>상세페이지<span class="block"></span><span>05</span></h3>
-                        </div>
-                        <div>
+                            <figcaption>
+                                <h3>상세페이지<span class="block"></span>
+                                    <span>05</span>
+                                </h3>
+                            </figcaption>
+                        </figure>
+                        <figure>
                             <img src="img/datail(6).jpg" alt="">
-                            <h3>상세페이지<span class="block"></span><span>06</span></h3>
-                        </div>
+                            <figcaption>
+                                <h3>상세페이지<span class="block"></span>
+                                    <span>06</span>
+                                </h3>
+                            </figcaption>
+                        </figure>
                     </div>
-                    <span class="button">
-                        <a href="">이전</a>
-                        <a href="">다음</a>
-                    </span>
+                    <p>hover</p>
                 </div>
                 <div class="card">
                     <img src="img/card(1).jpg" alt="">
-                    <img src="img/card(2).jpg" alt="">
+                    <img src="img/card(2).jpg" alt="">           
                     <img src="img/card(3).jpg" alt="">
                     <img src="img/card(4).jpg" alt="">
                     <img src="img/card(5).jpg" alt="">
@@ -609,7 +590,7 @@
                         <span class="block"></span>
                         바쁜시간 내주셔서 <span>감사합니다</span>
                     </p>
-                    <div class="padlet-embed" style="border:1px solid rgba(0,0,0,0.1);border-radius:2px;box-sizing:border-box;overflow:hidden;position:relative;width:100%;background:#F4F4F4"><p style="padding:0;margin:0"><iframe src="https://padlet.com/embed/s8ckg8a6qe36u7nd" frameborder="0" allow="camera;microphone;geolocation" style="width:100%;height:608px;display:block;padding:0;margin:0"></iframe></p><div style="display:flex;align-items:center;justify-content:end;margin:0;height:28px"><a href="https://padlet.com?ref=embed" style="display:block;flex-grow:0;margin:0;border:none;padding:0;text-decoration:none" target="_blank"><div style="display:flex;align-items:center;"><img src="https://padlet.net/embeds/made_with_padlet_2022.png" width="114" height="28" style="padding:0;margin:0;background:0 0;border:none;box-shadow:none" alt="Padlet으로 만듦"></div></a></div></div>
+                    <div class="padlet-embed" style="border:1px solid rgba(0,0,0,0.1);border-radius:2px;box-sizing:border-box;overflow:hidden;width:480px;height:352px;max-width:100%"><iframe src="https://padlet.com/padlets/1ka2f5m4pfiqfqyv/embeds/preview_embed" style="width:100%;height:100%;display:block;padding:0;margin:0" frameborder="0"></iframe></div>
                     <h3>EMAIL</h3>
                     <p class="email">kll400495@gmail.com</p>
                 </div>
